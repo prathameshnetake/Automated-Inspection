@@ -56,6 +56,12 @@ def motorControl(ip):
 def setup():
 	motorControl(1)
 
+def goodbuy():
+	print "Goodbye **** Stopping everything"
+	motorControl(0)
+	GPIO.cleanup()
+			
+
 
 
 
@@ -66,20 +72,23 @@ while True:
 	choice = raw_input("Should i start the program?   (y/n)  :")
 	if choice == 'y':
 		break
-	
-while True:
-	setup()	
-	pos = distance_in_cm()
-	print pos
-	time.sleep(0.05)
-	if pos > 4 and pos < 12:
-		print "Object Fount!"
-		print "Calculating center and Stopping main motor"
-		time.sleep(0.2)
-		motorControl(0)
-		print "Motor is been stopped"
-		time.sleep(5)
-		setup()
-	else:
-		print "Waiting for object to come in front"
+
+try:
+	while True:
+		setup()	
+		pos = distance_in_cm()
+		print pos
+		time.sleep(0.05)
+		if pos > 4 and pos < 12:
+			print "Object Fount!"
+			print "Calculating center and Stopping main motor"
+			time.sleep(0.2)
+			motorControl(0)
+			print "Motor is been stopped"
+			time.sleep(5)
+			setup()
+		else:
+			print "Waiting for object to come in front"
 	 
+except KeyboardInterrupt:
+
