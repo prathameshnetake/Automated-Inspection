@@ -56,11 +56,11 @@ def motorControl(ip):
 def setup():
 	motorControl(1)
 
-def goodbuy():
+def goodbye():
 	print "Goodbye **** Stopping everything"
 	motorControl(0)
 	GPIO.cleanup()
-			
+
 
 
 
@@ -91,4 +91,6 @@ try:
 			print "Waiting for object to come in front"
 	 
 except KeyboardInterrupt:
+	goodbye()
+
 
