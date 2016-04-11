@@ -56,8 +56,16 @@ def motorControl(ip):
 def setup():
 	motorControl(1)
 
+
+def makeMatch():
+	print "Ooops! this function is not yet implemrnted"
+
+
+
+
+
 def goodbye():
-	print "Goodbye **** Stopping everything"
+	print "\n\n\n\n **** Goodbye **** Stopping everything"
 	motorControl(0)
 	GPIO.cleanup()
 
@@ -85,7 +93,11 @@ try:
 			time.sleep(0.2)
 			motorControl(0)
 			print "Motor is been stopped"
-			time.sleep(5)
+			time.sleep(2)
+			print "Passing control to the make match funtion"
+			makeMatch()
+			print "Making match complete now reseting all the setup"
+
 			setup()
 		else:
 			print "Waiting for object to come in front"
