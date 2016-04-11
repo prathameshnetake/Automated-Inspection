@@ -42,15 +42,14 @@ def motorControl(ip):
 	GPIO.setup(MOTOR,GPIO.OUT)
         if ip == 1:
                 print "****  Turning motor on  ****"
-                time.sleep(0.5)
+                time.sleep(0.1)
                 GPIO.output(MOTOR, True)
-                time.sleep(0.5)
-        elif ip == 0:
-                time.sleep(0.5)
+                time.sleep(0.1)
+        elif ip == 0:                
                 print "****  Stopping motor ****"
-                time.sleep(0.5)
+                time.sleep(0.1)
                 GPIO.output(MOTOR, False)
-                time.sleep(0.5)
+                time.sleep(0.1)
         else:
                 print " *****  Invalid signal  **** "
 
@@ -76,7 +75,7 @@ while True:
 	if pos > 4 and pos < 12:
 		print "Object Fount!"
 		print "Calculating center and Stopping main motor"
-		time.sleep(0.05)
+		time.sleep(0.2)
 		motorControl(0)
 		print "Motor is been stopped"
 		time.sleep(5)
