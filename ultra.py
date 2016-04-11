@@ -37,5 +37,3 @@ def distance_in_cm():
     #print "Out Of Range"                   #display out of range
     return 0
 
-if __name__ == "__main__":
-  print distance_in_cm()
