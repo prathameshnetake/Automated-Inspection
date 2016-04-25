@@ -42,14 +42,14 @@ def motorControl(ip):
 	GPIO.setup(MOTOR,GPIO.OUT)
         if ip == 1:
                 print "****  Turning motor on  ****"
-                time.sleep(0.1)
+                time.sleep(0.05)
                 GPIO.output(MOTOR, True)
-                time.sleep(0.1)
+                time.sleep(0.05)
         elif ip == 0:                
                 print "****  Stopping motor ****"
-                time.sleep(0.1)
+                time.sleep(0.05)
                 GPIO.output(MOTOR, False)
-                time.sleep(0.1)
+                time.sleep(0.05)
         else:
                 print " *****  Invalid signal  **** "
 
@@ -87,13 +87,13 @@ try:
 		pos = distance_in_cm()
 		print pos
 		time.sleep(0.05)
-		if pos > 4 and pos < 12:
+		if pos > 13 and pos < 25:
 			print "Object Fount!"
 			print "Calculating center and Stopping main motor"
-			time.sleep(0.2)
+			
 			motorControl(0)
 			print "Motor is been stopped"
-			time.sleep(2)
+			time.sleep(3)
 			print "Passing control to the make match funtion"
 			makeMatch()
 			print "Making match complete now reseting all the setup"
